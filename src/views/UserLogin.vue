@@ -12,6 +12,7 @@
       </div>
       <input type="submit" class="btn btn-primary" value="Submit">
     </form>
+    <h4><router-link to="/signup">No Login? Signup Here</router-link></h4>
   </div>
 </template>
 

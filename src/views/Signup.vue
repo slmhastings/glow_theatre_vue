@@ -1,11 +1,11 @@
 <template>
   <div class="signup">
-    <img v-if="status" v-bind:src="`https://http.cat/${status}`">
+    <img v-if="status" v-bind:src="`${status}`">
     <form v-on:submit.prevent="submit()">
       <h1>Signup</h1>
-      <ul>
+      <!-- <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
-      </ul>
+      </ul> -->
 
       <div class="form-group">
         <label>First Name: </label> 

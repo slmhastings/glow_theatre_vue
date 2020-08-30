@@ -5,6 +5,7 @@ import Products from "../views/ProductsIndex.vue";
 import ProductShow from "../views/ProductShow.vue";
 import Login from "../views/UserLogin.vue";
 import Signup from "../views/Signup.vue";
+import UserAccount from "../views/UserAccount.vue";
 
 Vue.use(VueRouter);
 
@@ -41,6 +42,11 @@ const routes = [
     path: "/signup",
     name: "signup",
     component: Signup,
+  },
+  {
+    path: "/account",
+    name: "account",
+    component: UserAccount,
   },
 ];
 

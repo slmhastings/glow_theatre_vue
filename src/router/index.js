@@ -42,11 +42,6 @@ const routes = [
     name: "signup",
     component: Signup,
   },
-  {
-    // path: "/book",
-    // name: "book",
-    // component: Book,
-  },
 ];
 
 const router = new VueRouter({

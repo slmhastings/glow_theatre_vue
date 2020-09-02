@@ -3,21 +3,20 @@
     <form>
       <h1>Login</h1>
       <div class="form group">
-        <label>Email: </label>
-        <input type="email" class="form-control" v-model="email">
+        <label>Email:</label>
+        <input type="email" class="form-control" v-model="email" />
       </div>
       <div class="form group">
-        <label>Password: </label>
-        <input type="password" class="form-control" v-model="password">
+        <label>Password:</label>
+        <input type="password" class="form-control" v-model="password" />
       </div>
-      <input type="submit" class="btn btn-primary" value="Submit">
+      <button type="button" v-on:click="login()">Log In</button>
     </form>
     <h4><router-link to="/signup">No Login? Signup Here</router-link></h4>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
 import axios from "axios";
@@ -31,25 +30,17 @@ export default {
   },
   created: function () {},
   methods: {
-    submit: function () {
-      var params = {
-        email: this.email,
-        password: this.password,
-      };
-      axios
-        .post("/api/sessions", params)
-        .then((response) => {
-          console.log(response.data);
-          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
-          localStorage.setItem("jwt", response.data.jwt);
-          localStorage.setItem("user_id", response.data.user_id);
-          this.$router.push("/");
-        })
-        .catch((error) => {
-          this.errors = ["Invalid email or password."];
-          this.email = "";
-          this.password = "";
-        });
+    login() {
+      if (this.email !== "" && this.password !== "") {
+        // if (this.email == this.$parent.user_account.email && this.password == this.$parent.user_account.password) {
+        this.$emit("authenticated", true);
+        this.$router.push("/");
+        // } else {
+        //   console.log("The email and / or password is incorrect");
+        // }
+      } else {
+        console.log("An email and password must be present");
+      }
     },
   },
 };

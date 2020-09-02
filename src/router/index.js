@@ -4,6 +4,7 @@ import Home from "../views/Home.vue";
 import Products from "../views/ProductsIndex.vue";
 import ProductShow from "../views/ProductShow.vue";
 import Login from "../views/UserLogin.vue";
+import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
 import UserAccount from "../views/UserAccount.vue";
 
@@ -37,6 +38,11 @@ const routes = [
     path: "/login",
     name: "login",
     component: Login,
+  },
+  {
+    path: "/logout",
+    name: "logout",
+    component: Logout,
   },
   {
     path: "/signup",

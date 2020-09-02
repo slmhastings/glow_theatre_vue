@@ -1,29 +1,31 @@
 <template>
   <div class="home">
     <h2>{{ message }}</h2>
-    <p>{{ current_user.id }}</p>
-
+    <div v-if="user.user_id == $parent.getUserId()">
+    <p>{{ user.id }}</p>
+    <p>{{ user.first_name }}</p>
+    </div>
   </div>
 </template>
 
-<style>
-</style>
+<style></style>
 
 <script>
+import axios from "axios";
+
 export default {
   data: function () {
     return {
       message: "Account Info",
-      current_user: [],
+      user: {},
     };
   },
   created: function () {
-    this.userInfo();
+    axios.get(`/api/users/${this.$route.params.id}`).then((response) => {
+      console.log("user", response);
+      this.user = response.data;
+    });
   },
-  methods: {
-    userInfo: function () {
-      console.log("showing info");
-    },
-  },
+  methods: {},
 };
 </script>

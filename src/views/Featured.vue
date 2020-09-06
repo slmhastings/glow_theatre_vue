@@ -4,7 +4,7 @@
       <div class="container wow fadeInUp">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="section-title">Featured Movies</h3>
+            <h3 class="section-title">Trending</h3>
             <div class="section-title-divider"></div>
             <p class="section-description">Our current movie stash</p>
           </div>
@@ -17,16 +17,16 @@
               <div class="portfolio-info">
               </div>
               <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+<button type="button" class="modalBtn" data-toggle="modal" data-target="featuredModel">
   More Info
 </button>
 
 <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal fade" id="featuredModal" tabindex="-1" role="dialog" aria-labelledby="featuredModal" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">{{ movie.title }}</h5>
+        <h5 class="modal-title" id="featuredModal">{{ movie.title }}</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>

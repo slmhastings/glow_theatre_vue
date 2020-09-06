@@ -3,9 +3,9 @@
     <header id="header">
       <div class="container d-flex align-items-center">
 
-        <a href="/" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>
+        <!-- <a href="/" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a> -->
         <!-- Uncomment below if you prefer to use a text logo -->
-        <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+        <h1 class="logo mr-auto"><a href="index.html">App Name</a></h1>
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
@@ -14,6 +14,7 @@
             <li><a href="/products">Packages</a></li>
             <li><a href="/featured">Trending</a></li>
             <li><a href="/login">Login</a></li>
+            <li><a href="/logout">Logout</a></li>
           </ul>
         </nav><!-- .nav-menu -->
 

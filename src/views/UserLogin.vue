@@ -16,7 +16,7 @@
         
           <div class="col-lg-6 col-md-5">
             <div class="form">
-              <form class="php-email-form">
+              <form class="php-email-form" v-on:submit.prevent="login()">
 
                 <div class="form-group">
                   <label>Email: </label>
@@ -30,9 +30,11 @@
                   <div class="validate"></div>
                 </div>
 
-                <div class="text-center"><input type="submit" class="btn btn-primary" v-on:click="login()"></div>
+                <div class="text-center"><input type="submit" class="btn btn-primary"></div>
               </form>
-              <p><router-link to="/signup">No Login? Signup Here</router-link></p>
+              <div class="signup link">
+                <p><router-link to="/signup">No Login? Signup Here</router-link></p>
+              </div>
             </div>
           </div>
 
@@ -40,19 +42,6 @@
       </div>
     </section>
 
-    <!-- <form>
-      <h1>Login</h1>
-      <div class="form group">
-        <label>Email:</label>
-        <input type="email" class="form-control" v-model="email" />
-      </div>
-      <div class="form group">
-        <label>Password:</label>
-        <input type="password" class="form-control" v-model="password" />
-      </div>
-      
-    </form>
-     -->
   </div>
 </template>
 
@@ -71,16 +60,25 @@ export default {
   created: function () {},
   methods: {
     login() {
-      if (this.email !== "" && this.password !== "") {
-        if (this.email === this.$parent.user_id.email && this.password === this.$parent.user_id.password) {
-          //   this.$emit("authenticated", true);
-          //   this.$router.push("/");
-          // } else {
-          console.log("The email and / or password is incorrect");
-        }
-      } else {
-        console.log("An email and password must be present");
-      }
+      var params = {
+        email: this.email,
+        password: this.password,
+      };
+      axios
+        .post("/api/sessions", params)
+        .then((response) => {
+          console.log(response.data);
+          axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
+          localStorage.setItem("jwt", response.data.jwt);
+          localStorage.setItem("user_id", response.data.user_id);
+          this.$router.push("/");
+          console.log("test");
+        })
+        .catch((error) => {
+          this.errors = ["Invalid email or password."];
+          this.email = "";
+          this.password = "";
+        });
     },
   },
 };

@@ -12,52 +12,19 @@
 
         <div class="row portfolio-container">
 
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div v-for="product in products" class="col-lg-4 col-md-6 portfolio-item filter-app">
             <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
             <div class="portfolio-info">
-              <h4>Lights! - $150</h4>
-              <p>Our starter </p>
+              <h4>{{ product.name }} - {{ product.price }}</h4>
+              <p>{{ product.description }}</p>
               <a href="http://schedule.nylas.com/movienight" >Book Now</a>
               
             </div>
           </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-web">
-            <img src="assets/img/portfolio/portfolio-2.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Camera! - $200</h4>
-              <p>Our starter plus popcorn machine, concessions, and enclosed tent. VALUE!</p>
-              <a href="http://schedule.nylas.com/movienight" >Book Now</a>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-3.jpg" class="img-fluid" alt="">
-            <div class="portfolio-info">
-              <h4>Action! - starting at $300</h4>
-              <p>From birthday parties to romantic date nights. We customize for every occasion!</p>
-              <a href="http://schedule.nylas.com/movienight" >Book Now</a>
-            </div>
-          </div>
         </div>
-
       </div>
     </section><!-- End Portfolio Section -->
-    <!-- <h1>{{ message }}</h1>
-    <div v-for="product in products">
-      <div class="card mb-3">
-        <img src="${product.image_url}" class="card-img-top" alt="..." />
-        <div class="card-body">
-          <h5 class="card-title">{{ product.name }}</h5>
-          <p class="card-text">
-            {{ product.description }}
-          </p>
-          <p class="card-text">
-            <small class="text-muted">{{ product.price }}</small>
-          </p>
-        </div>
-      </div>
-    </div> -->
+    
   </div>
 </template>
 

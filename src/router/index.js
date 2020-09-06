@@ -8,6 +8,7 @@ import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
 import UserAccount from "../views/UserAccount.vue";
 import Featured from "../views/Featured.vue";
+import Question from "../views/Question.vue";
 
 Vue.use(VueRouter);
 
@@ -59,6 +60,11 @@ const routes = [
     path: "/featured",
     name: "featured",
     component: Featured,
+  },
+  {
+    path: "/question",
+    name: "question",
+    component: Question,
   },
 ];
 

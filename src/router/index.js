@@ -7,6 +7,7 @@ import Login from "../views/UserLogin.vue";
 import Logout from "../views/Logout.vue";
 import Signup from "../views/Signup.vue";
 import UserAccount from "../views/UserAccount.vue";
+import Featured from "../views/Featured.vue";
 
 Vue.use(VueRouter);
 
@@ -53,6 +54,11 @@ const routes = [
     path: "/account",
     name: "account",
     component: UserAccount,
+  },
+  {
+    path: "/featured",
+    name: "featured",
+    component: Featured,
   },
 ];
 

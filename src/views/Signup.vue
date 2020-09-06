@@ -2,7 +2,7 @@
   <div class="signup">
     <img v-if="status" v-bind:src="`${status}`" />
     <form v-on:submit.prevent="submit()">
-      <h1>Signup</h1>
+      <div class="form-group"><h1>Signup</h1></div>
       <!-- <ul>
         <li class="text-danger" v-for="error in errors">{{ error }}</li>
       </ul> -->
@@ -36,18 +36,20 @@
         <input type="password" class="form-control" v-model="passwordConfirmation" />
         <small v-if="password !== passwordConfirmation">Passwords don't match</small>
       </div>
-
+      <div class="form-group">
       <input type="submit" class="btn btn-primary" value="Submit" />
+      </div>
     </form>
   </div>
 </template>
 
-<style></style>
+<style>
+</style>
 
 <script>
 import axios from "axios";
 export default {
-  data: function() {
+  data: function () {
     return {
       first_name: "",
       last_name: "",
@@ -59,7 +61,7 @@ export default {
     };
   },
   methods: {
-    submit: function() {
+    submit: function () {
       var params = {
         first_name: this.first_name,
         last_name: this.last_name,
@@ -69,10 +71,10 @@ export default {
       };
       axios
         .post("/api/users", params)
-        .then(response => {
+        .then((response) => {
           this.$router.push("/login");
         })
-        .catch(error => {
+        .catch((error) => {
           this.errors = error.response.data.errors;
           console.log(error.response);
           this.status = error.response.status;

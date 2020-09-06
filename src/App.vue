@@ -1,19 +1,49 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link>
-      |
-      <router-link to="/about">About</router-link>
-      |
-      <router-link to="/products">Products</router-link>
-      |
-      <router-link v-if="authenticated" to="/login" v-on:click.native="logout()" replace>Logout</router-link> |
-      
-      <router-link v-if="authenticated" to="/account"> Account</router-link> 
+    <header id="header">
+      <div class="container d-flex align-items-center">
 
-      <router-link v-if="!authenticated" to="/login"  replace>Login</router-link> 
-    </div>
-    <router-view @authenticated="setAuthenticated" />
+        <a href="/" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a>
+        <!-- Uncomment below if you prefer to use a text logo -->
+        <!-- <h1 class="logo mr-auto"><a href="index.html">Imperial</a></h1> -->
+
+        <nav class="nav-menu d-none d-lg-block">
+          <ul>
+            <li class="active"><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/products">Packages</a></li>
+            <li><a href="/featured">Trending</a></li>
+            <li><a href="/login">Login</a></li>
+          </ul>
+        </nav><!-- .nav-menu -->
+
+      </div>
+    </header><!-- End Header -->
+
+    <router-view/>
+
+
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="copyright">
+              &copy; Copyright <strong>Imperial Theme</strong>. All Rights Reserved
+            </div>
+            <div class="credits">
+              <!--
+              All the links in the footer should remain intact.
+              You can delete the links only if you purchased the pro version.
+              Licensing information: https://bootstrapmade.com/license/
+              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
+            -->
+              Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer><!-- End Footer -->
   </div>
 </template>
 
@@ -23,16 +53,11 @@ export default {
   data() {
     return {
       authenticated: false,
-      user_account: {
+      user_id: {
         email: "",
         password: "",
       },
     };
-  },
-  mounted() {
-    // if (!this.authenticated) {
-    //   this.$router.replace({ name: "login" });
-    // }
   },
   methods: {
     setAuthenticated(status) {
@@ -48,25 +73,4 @@ export default {
 };
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-
-#nav {
-  padding: 30px;
-}
-
-#nav a {
-  font-weight: bold;
-  color: #2c3e50;
-}
-
-#nav a.router-link-exact-active {
-  color: #42b983;
-}
-</style>
+<style></style>

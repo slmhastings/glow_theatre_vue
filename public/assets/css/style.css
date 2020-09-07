@@ -487,8 +487,10 @@ h6 {
 /* Get Started Section
 --------------------------------*/
 #about {
-  background: white;
-  padding: 80px 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/popback.png") fixed center center;
+  background-size: cover;
+  padding: 80px 0 80px 0;
 }
 
 #about .about-img {
@@ -532,13 +534,14 @@ h6 {
 --------------------------------*/
 #services {
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    url("../img/services-bg.jpg") fixed center center;
+    url("../img/popback.png") fixed center center;
   background-size: cover;
-  padding: 80px 0 60px 0;
+  padding: 80px 0 80px 0;
 }
 
 #services .service-item {
-  margin-bottom: 20px;
+  margin: auto;
+  padding: 40px;
 }
 
 #services .service-icon {
@@ -564,9 +567,8 @@ h6 {
 }
 
 #services .service-title {
-  margin-left: 80px;
-  font-weight: 700;
-  margin-bottom: 15px;
+  position: center;
+  margin: auto;
   text-transform: uppercase;
 }
 
@@ -575,8 +577,7 @@ h6 {
 }
 
 #services .service-description {
-  margin-left: 80px;
-  line-height: 24px;
+  margin: auto;
 }
 
 /* Subscribe Section
@@ -625,8 +626,10 @@ h6 {
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  background: #fff;
-  padding: 80px 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/popback.png") fixed center center;
+  background-size: cover;
+  padding: 80px 0 80px 0;
 }
 
 #portfolio #portfolio-flters {
@@ -843,8 +846,10 @@ h6 {
 /* Contact Section
 --------------------------------*/
 #contact {
-  background: #f7f7f7;
-  padding: 80px 0 300px 0;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/popback.png") fixed center center;
+  background-size: cover;
+  padding: 80px 0 80px 0;
 }
 
 #contact .info {
@@ -1128,4 +1133,30 @@ h6 {
 }
 .modalBtn {
   background-color: white;
+}
+
+/* Trivia */
+
+.trivia-question {
+  text-align: center;
+}
+.trivia-buttons {
+  position: center;
+  margin: 20%;
+}
+
+/* Featured */
+
+.featured {
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/popback.png") fixed center center;
+  background-size: cover;
+  padding: 80px 0 80px 0;
+}
+.card {
+  margin: auto;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/popback.png") fixed center center;
+  background-size: cover;
+  padding: 80px 0 80px 0;
 }

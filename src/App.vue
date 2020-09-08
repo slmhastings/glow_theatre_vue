@@ -4,7 +4,7 @@
       <div class="container d-flex align-items-center">
         <!-- <a href="/" class="logo mr-auto"><img src="assets/img/logo.png" alt=""></a> -->
         <!-- Uncomment below if you prefer to use a text logo -->
-        <h1 class="logo mr-auto"><a href="/">Outdoor Theatre</a></h1>
+        <h1 class="logo mr-auto"><a href="/">BookFlix</a></h1>
 
         <nav class="nav-menu d-none d-lg-block">
           <ul>
@@ -41,7 +41,7 @@
               Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
             -->
               Designed by
-              <a href="https://bootstrapmade.com/">BootstrapMade</a>
+              <a href="https://bootstrapmade.com/"></a>
             </div>
           </div>
         </div>

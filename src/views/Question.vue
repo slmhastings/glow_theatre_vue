@@ -40,10 +40,10 @@
               </button>
             </div>
             <div class="modal-body">
-              You know your stuff!
+              You know your stuff! Enter this coupon code when booking "WIZKID20"
             </div>
             <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+              <a class="btn btn-primary" href="/" role="button">Home</a>
               <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
             </div>
           </div>
@@ -97,6 +97,7 @@ export default {
       console.log("user picked false");
       if (this.trivia.correct_answer == "False") {
         console.log("correct");
+        window.$("#winnerModal").modal("show");
       } else {
         console.log("wrong answer");
         this.$router.push("/");

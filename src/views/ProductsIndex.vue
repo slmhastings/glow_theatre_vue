@@ -11,20 +11,18 @@
         </div>
 
         <div class="row portfolio-container">
-
           <div v-for="product in products" class="col-lg-4 col-md-6 portfolio-item filter-app">
-            <img src="assets/img/portfolio/portfolio-1.jpg" class="img-fluid" alt="">
+            <img v-bind:src="product.image_url" class="img-fluid" alt="" />
             <div class="portfolio-info">
               <h4>{{ product.name }} - {{ product.price }}</h4>
               <p>{{ product.description }}</p>
-              <a href="http://schedule.nylas.com/movienight" >Book Now</a>
-              
+              <a href="http://schedule.nylas.com/movienight">Book Now</a>
             </div>
           </div>
         </div>
       </div>
-    </section><!-- End Portfolio Section -->
-    
+    </section>
+    <!-- End Portfolio Section -->
   </div>
 </template>
 
@@ -33,19 +31,19 @@
 <script>
 import axios from "axios";
 export default {
-  data: function () {
+  data: function() {
     return {
       message: "Packages",
       products: [],
     };
   },
-  created: function () {
+  created: function() {
     this.IndexProducts();
   },
   methods: {
-    IndexProducts: function () {
+    IndexProducts: function() {
       console.log("in the products index...");
-      axios.get("/api/products").then((response) => {
+      axios.get("/api/products").then(response => {
         console.log(response.data);
         this.products = response.data;
       });

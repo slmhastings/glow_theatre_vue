@@ -4,11 +4,11 @@
       <div class="hero-container">
         <div class="wow fadeIn">
           <div class="hero-logo">
-            <img class="" src="assets/img/logo.png" alt="Imperial">
+            <img class="" src="https://www.uokpl.rs/fpng/f/565-5652395_transparent-popcorn-background.png" alt="Imperial" style="width:200px;height:315px;">
           </div>
 
-          <h1>A true movie experience</h1>
-          <h2>We create memories<span class="typed" data-typed-items="beautiful graphics, functional websites, working mobile apps"></span></h2>
+          <h1>BookFlix</h1>
+          <h2>Bringing the show to your abode<span class="typed" data-typed-items="beautiful graphics, functional websites, working mobile apps"></span></h2>
           <div class="actions">
             <a href="/featured" class="btn-get-started">Trending Movies</a>
             <a href="/products" class="btn-services">Our Packages</a>

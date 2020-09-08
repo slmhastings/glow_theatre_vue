@@ -1,6 +1,5 @@
 <template>
   <div class="login">
-
     <!-- ======= Contact Section ======= -->
     <section id="contact">
       <div class="container wow fadeInUp">
@@ -13,35 +12,31 @@
         </div>
 
         <div class="row justify-content-center">
-        
           <div class="col-lg-6 col-md-5">
             <div class="form">
               <form class="php-email-form" v-on:submit.prevent="login()">
-
                 <div class="form-group">
-                  <label>Email: </label>
-                  <input type="email"  name="email" id="email" data-rule="email" v-model="email" />
+                  <label>Email:</label>
+                  <input type="email" name="email" id="email" data-rule="email" v-model="email" />
                   <div class="validate"></div>
                 </div>
 
                 <div class="form-group">
-                  <label>Password: </label>
-                  <input type="password" name="password" data-rule="required"  v-model="password"/>
+                  <label>Password:</label>
+                  <input type="password" name="password" data-rule="required" v-model="password" />
                   <div class="validate"></div>
                 </div>
 
-                <div class="text-center"><input type="submit" class="btn btn-primary"></div>
+                <div class="login-link"><input type="submit" class="btn btn-primary" /></div>
               </form>
-              <div class="signup link">
+              <div class="signup-link">
                 <p><router-link to="/signup">No Login? Signup Here</router-link></p>
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>
-
   </div>
 </template>
 
@@ -50,14 +45,14 @@
 <script>
 import axios from "axios";
 export default {
-  data: function () {
+  data: function() {
     return {
       email: "",
       password: "",
       errors: [],
     };
   },
-  created: function () {},
+  created: function() {},
   methods: {
     login() {
       var params = {
@@ -66,7 +61,7 @@ export default {
       };
       axios
         .post("/api/sessions", params)
-        .then((response) => {
+        .then(response => {
           console.log(response.data);
           axios.defaults.headers.common["Authorization"] = "Bearer " + response.data.jwt;
           localStorage.setItem("jwt", response.data.jwt);
@@ -74,7 +69,7 @@ export default {
           this.$router.push("/question");
           console.log("test");
         })
-        .catch((error) => {
+        .catch(error => {
           this.errors = ["Invalid email or password."];
           this.email = "";
           this.password = "";
@@ -83,4 +78,3 @@ export default {
   },
 };
 </script>
-

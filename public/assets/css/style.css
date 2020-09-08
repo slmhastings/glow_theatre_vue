@@ -9,9 +9,9 @@
 # General
 --------------------------------------------------------------*/
 body {
-  background: white;
-
-  font-family: "Open Sans", sans-serif;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
+    url("../img/popback.png") fixed center center;
+  background-size: cover;
 }
 
 a {
@@ -109,7 +109,7 @@ h6 {
 }
 
 #hero .hero-logo img {
-  max-width: 100%;
+  max-width: 50%;
 }
 
 #hero .hero-container {
@@ -626,8 +626,7 @@ h6 {
 /* Portfolio Section
 --------------------------------*/
 #portfolio {
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    url("../img/popback.png") fixed center center;
+  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url("../img/popback.png");
   background-size: cover;
   padding: 80px 0 80px 0;
 }
@@ -846,9 +845,6 @@ h6 {
 /* Contact Section
 --------------------------------*/
 #contact {
-  background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)),
-    url("../img/popback.png") fixed center center;
-  background-size: cover;
   padding: 80px 0 80px 0;
 }
 
@@ -933,7 +929,7 @@ h6 {
   background: #dfce61;
   border: 0;
   padding: 10px 24px;
-  margin: 10px;
+  margin: 80%;
   color: #fff;
   transition: 0.4s;
 }
@@ -1159,4 +1155,10 @@ h6 {
     url("../img/popback.png") fixed center center;
   background-size: cover;
   padding: 80px 0 80px 0;
+}
+.login-link {
+  margin: auto;
+}
+.signup-link {
+  margin: auto;
 }
